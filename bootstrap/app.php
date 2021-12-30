@@ -99,6 +99,12 @@ $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 // Add this line
 $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 
+if (class_exists(\Knuckles\Scribe\ScribeServiceProvider::class)) {
+    $app->register(\Knuckles\Scribe\ScribeServiceProvider::class);
+    $app->configure('scribe');
+}
+
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
